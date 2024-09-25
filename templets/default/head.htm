@@ -1,0 +1,51 @@
+<div class="wrap-header">
+  <div class="layout bg-black wrap-top">
+    <div class="container height-big text-white">
+      <div class="xl12 xs6 xm8 xb9"></div>
+      <div class="hidden-l xs6 xm4 xb3">
+        <form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+          <input type="hidden" name="kwtype" value="0" />
+          <div class="input-group text-right">
+            <input type="text" class="input border-main ss" name="q" size="30" placeholder="关键词" />
+            <span class="addbtn">
+            <button type="submit" class="button bg-main ss-btn">搜!</button>
+            </span> </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container padding-top padding-big-bottom">
+    <div class="line">
+      <div class="xl12 xs12 xm2 xb3 padding-top logo">
+        <button class="button icon-navicon float-right" data-target="#header-demo3"></button>
+        <a href="/"><img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}"/></a> </div>
+      <div class=" xl12 xs12 xm10 xb9 nav-navicon" id="header-demo3">
+        <div class="text-right padding-big-top navbar navbar-big">
+          <ul class="nav nav-menu nav-inline nav-pills text-right">
+            <li {dede:field name=typeid runphp="yes"}(@me=="")? @me=" class='active' ":@me="";{/dede:field}><a href="/" class="topa"> 首页</a></li>
+            {dede:channelartlist typeid='top' currentstyle='active'}
+            <li class="{dede:field.currentstyle/}"><a {dede:field name=typeid runphp="yes"}
+global $dsql;
+$sql = "SELECT id From `dede_arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+$row = $dsql->GetOne($sql);      
+              @me=is_array($row)?'href="javascript:;"':'';
+              {/dede:field} href="{dede:field name='typeurl'/}" class="topa">{dede:field name='typename'/}</a>
+              <ul {dede:field name=typeid runphp="yes"}
+global $dsql;
+$sql = "SELECT id From `#@__arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+$row = $dsql->
+                GetOne($sql);
+                @me=is_array($row)?'class="drop-menu"':'style="display:none"';
+                {/dede:field}>
+                {dede:channel type='son' noself='yes'}
+                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                {/dede:channel}
+              </ul>
+            </li>
+            {/dede:channelartlist}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
