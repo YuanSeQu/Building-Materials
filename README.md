@@ -18,11 +18,11 @@
 3.猿社区有强大的开发者与产品经理社区支持，可以联系客服加入，目前已有100+的伙伴加入我们，平时也有开源项目组队 <br/>
 
 # 系统图片
-![输入图片说明](https://gitee.com/apehub/ChemicalIndustry/raw/master/1727281047829.jpg)
+![输入图片说明](https://gitee.com/apehub/BuildingMaterials/raw/master/1727285094693.jpg)
 
 # 配套资料
-需要开发手册请访问这里 https://www.pbootcms.com/docs/<br/>
-PbootCMS系统免费域名授权：https://www.pbootcms.com/freesn/<br/>
+DedeCMS使用（快速入门）手册：https://help.dedecms.com/chujie//<br/>
+DedeCMS模板手册：https://help.dedecms.com/mubanshouce/<br/>
 
 
 # 关于我们
